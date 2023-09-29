@@ -1,4 +1,4 @@
-# My Meeting Agent Had Amnesia. Hindsight Was the Cure
+# How Hindsight Became My Agent's "Wait, We Discussed This" Button
 
 For the first few months, my meeting prep agent introduced me to people I had been on calls with every week for a year. It would draft a confident pre-meeting brief for Sarah, our champion on a $240k deal, and never mention that she had told me, twice, that she hard-stops at 2:30 PM. The model was fine. The memory was the problem, because there wasn't any.
 
