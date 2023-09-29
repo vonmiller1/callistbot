@@ -129,3 +129,19 @@ The moved meeting now behaves the way I wanted from the start. The change gets r
 5. **Make user edits inputs, not overrides.** The moment you overwrite something a person wrote, they stop writing.
 
 I still keep `generatedAt` on the type. It is the reason I noticed the problem, and now it is the reason a stale brief announces itself.
+
+<img width="1600" height="759" alt="WhatsApp Image 2026-09-29 at 7 48 03 PM" src="https://github.com/user-attachments/assets/147c7b48-758e-4ea2-b16d-5453dde7dcb1" />
+
+<img width="1600" height="765" alt="WhatsApp Image 2026-09-29 at 7 41 55 PM" src="https://github.com/user-attachments/assets/16ccf172-d3ea-4b51-9bff-4ea2e6841aab" />
+
+
+<img width="1901" height="903" alt="image" src="https://github.com/user-attachments/assets/a639a1db-ec47-4417-8306-acac91d2e484" />
+
+<img width="1895" height="907" alt="image" src="https://github.com/user-attachments/assets/e821e7a6-1624-4cc4-8b42-71d0ccae7bef" />
+
+
+
+
+<img width="1600" height="849" alt="WhatsApp Image 2026-09-29 at 7 50 01 PM" src="https://github.com/user-attachments/assets/2d3c650d-0bd6-41cd-b121-10815a968626" />
+
+<img width="1905" height="1015" alt="image" src="https://github.com/user-attachments/assets/f950ee05-3cb6-4b34-95d0-0d4230e45901" />
