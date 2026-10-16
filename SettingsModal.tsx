@@ -13,7 +13,7 @@ import {
   Lock,
   Mail
 } from 'lucide-react';
-import { UserProfile, CalendarIntegration } from '../types';
+import { UserProfile, CalendarIntegration } from './types';
 
 interface SettingsModalProps {
   isOpen: boolean;
