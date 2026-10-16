@@ -1,4 +1,4 @@
-import { UserProfile, Meeting, AppNotification, CalendarIntegration } from '../types';
+import { UserProfile, Meeting, AppNotification, CalendarIntegration } from './types';
 
 const TOKEN_KEY = 'calist_auth_token';
 
@@ -23,7 +23,7 @@ export const api = {
     };
 
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      headers['Authorization'] = token.startsWith('Bearer ') ? token : `Bearer ${token}`;
     }
 
     const response = await fetch(endpoint, {
