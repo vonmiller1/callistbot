@@ -16,7 +16,7 @@ import {
   ListTodo,
   Share2
 } from 'lucide-react';
-import { Meeting } from '../types';
+import { Meeting } from './types';
 
 interface MeetingDetailsModalProps {
   meeting: Meeting | null;
