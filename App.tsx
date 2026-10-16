@@ -4,20 +4,20 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { Header } from './components/Header';
-import { Dashboard } from './components/Dashboard';
-import { AssistantChatPane } from './components/AssistantChatPane';
-import { ContactHabitsView } from './components/ContactHabitsView';
-import { AuthModal } from './components/AuthModal';
-import { ScheduleMeetingModal } from './components/ScheduleMeetingModal';
-import { MeetingDetailsModal } from './components/MeetingDetailsModal';
-import { ProfileModal } from './components/ProfileModal';
-import { SettingsModal } from './components/SettingsModal';
-import { NotificationsDropdown } from './components/NotificationsDropdown';
-import { api } from './services/api';
-import { exportSimpleZip, triggerDownload } from './services/zipExporter';
+import { Header } from './Header';
+import { Dashboard } from './Dashboard';
+import { AssistantChatPane } from './AssistantChatPane';
+import { ContactHabitsView } from './ContactHabitsView';
+import { AuthModal } from './AuthModal';
+import { ScheduleMeetingModal } from './ScheduleMeetingModal';
+import { MeetingDetailsModal } from './MeetingDetailsModal';
+import { ProfileModal } from './ProfileModal';
+import { SettingsModal } from './SettingsModal';
+import { NotificationsDropdown } from './NotificationsDropdown';
+import { api } from './api';
+import { exportSimpleZip, triggerDownload } from './zipExporter';
 import { UserProfile, Meeting, AppNotification, CalendarIntegration } from './types';
-import { MOCK_CONTACTS } from './data/mockWorkspace';
+import { MOCK_CONTACTS } from './mockWorkspace';
 import { Sparkles } from 'lucide-react';
 
 export default function App() {
