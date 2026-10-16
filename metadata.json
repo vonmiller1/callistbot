@@ -1,0 +1,6 @@
+{
+  "name": "Calist - AI Meeting Prep & Workspace Intelligence",
+  "description": "Autonomous Meeting Prep Agent and Workspace Intelligence platform with multi-source ingestion, vector memory, OAuth portals, and contact habit analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
