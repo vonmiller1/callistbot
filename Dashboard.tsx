@@ -12,7 +12,7 @@ import {
   CalendarCheck,
   ListFilter
 } from 'lucide-react';
-import { Meeting } from '../types';
+import { Meeting } from './types';
 
 interface DashboardProps {
   meetings: Meeting[];
