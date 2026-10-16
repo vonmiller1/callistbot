@@ -1,4 +1,4 @@
-import { Contact, IntegrationAccount, Meeting } from '../types';
+import { Contact, IntegrationAccount, Meeting } from './types';
 
 export const INITIAL_INTEGRATIONS: IntegrationAccount[] = [
   {
