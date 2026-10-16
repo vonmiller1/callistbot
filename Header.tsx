@@ -14,7 +14,7 @@ import {
   User as UserIcon,
   ChevronDown
 } from 'lucide-react';
-import { UserProfile, AppNotification } from '../types';
+import { UserProfile, AppNotification } from './types';
 
 interface HeaderProps {
   user: UserProfile | null;
