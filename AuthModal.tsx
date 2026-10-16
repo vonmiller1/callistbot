@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, Mail, Lock, User, ArrowRight, ShieldCheck, Check, AlertCircle } from 'lucide-react';
-import { api } from '../services/api';
-import { UserProfile } from '../types';
+import { api } from './api';
+import { UserProfile } from './types';
 
 interface AuthModalProps {
   onSuccess: (user: UserProfile) => void;
