@@ -1,5 +1,5 @@
 import JSZip from 'jszip';
-import { SIMPLE_REPO_FILES } from '../data/simpleRepoFiles';
+import { SIMPLE_REPO_FILES } from './simpleRepoFiles';
 
 export async function exportSimpleZip(): Promise<Blob> {
   try {
