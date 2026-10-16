@@ -10,7 +10,7 @@ import {
   CheckCircle2, 
   AlertCircle 
 } from 'lucide-react';
-import { AppNotification } from '../types';
+import { AppNotification } from './types';
 
 interface NotificationsDropdownProps {
   isOpen: boolean;
