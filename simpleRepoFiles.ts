@@ -1,4 +1,4 @@
-import { SimpleRepoFile } from '../types';
+import { SimpleRepoFile } from './types';
 
 export const SIMPLE_REPO_FILES: SimpleRepoFile[] = [
   {
