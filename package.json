@@ -1,7 +1,8 @@
 {
-  "name": "react-example",
+  "name": "callistbot",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
+  "description": "Calist — AI meeting prep dashboard with Express API and React UI",
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
