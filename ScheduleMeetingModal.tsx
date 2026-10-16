@@ -13,7 +13,7 @@ import {
   Link,
   Users
 } from 'lucide-react';
-import { Meeting, Participant, MeetingReminder } from '../types';
+import { Meeting, Participant, MeetingReminder } from './types';
 
 interface ScheduleMeetingModalProps {
   isOpen: boolean;
@@ -72,14 +72,21 @@ export const ScheduleMeetingModal: React.FC<ScheduleMeetingModalProps> = ({
     });
   };
 
+  const emailLooksValid = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim() || !date || !startTime) return;
 
+    const filledEmails = participants.filter((p) => p.email.trim());
+    const invalidEmail = filledEmails.find((p) => !emailLooksValid(p.email));
+    if (invalidEmail) {
+      return;
+    }
+
     setIsLoading(true);
     try {
-      const validParticipants: Participant[] = participants
-        .filter((p) => p.email.trim())
+      const validParticipants: Participant[] = filledEmails
         .map((p, idx) => ({
           id: `p-${Date.now()}-${idx}`,
           name: p.name.trim() || p.email.split('@')[0],
