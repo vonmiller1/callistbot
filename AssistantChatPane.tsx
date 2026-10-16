@@ -8,7 +8,8 @@ import {
   Trash2, 
   Lightbulb
 } from 'lucide-react';
-import { ChatMessage } from '../types';
+import { api } from './api';
+import { ChatMessage } from './types';
 
 interface AssistantChatPaneProps {
   initialQuery?: string;
@@ -88,16 +89,9 @@ Here is what you need to know for your call with her:
       } else {
         // Call backend API if running with Gemini key
         try {
-          const res = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ query: text })
-          });
-          if (res.ok) {
-            const data = await res.json();
-            if (data.answer) {
-              responseText = data.answer;
-            }
+          const data = await api.chat(text);
+          if (data.answer) {
+            responseText = data.answer;
           }
         } catch (e) {
           // ignore error
