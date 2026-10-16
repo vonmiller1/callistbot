@@ -156,11 +156,17 @@ The amnesia was real. The cure was persistence—not just storing data, but stor
 <img width="1600" height="765" alt="WhatsApp Image 2026-09-29 at 7 41 55 PM" src="https://github.com/user-attachments/assets/16ccf172-d3ea-4b51-9bff-4ea2e6841aab" />
 
 
-<img width="1600" height="756" alt="WhatsApp Image 2026-09-29 at 7 45 19 PM" src="https://github.com/user-attachments/assets/352589d6-6ff2-4f7a-98d7-79cf8185194a" />
+<img width="1901" height="903" alt="image" src="https://github.com/user-attachments/assets/a639a1db-ec47-4417-8306-acac91d2e484" />
+
+<img width="1895" height="907" alt="image" src="https://github.com/user-attachments/assets/e821e7a6-1624-4cc4-8b42-71d0ccae7bef" />
+
+
+
 
 <img width="1600" height="849" alt="WhatsApp Image 2026-09-29 at 7 50 01 PM" src="https://github.com/user-attachments/assets/2d3c650d-0bd6-41cd-b121-10815a968626" />
 
-<img width="1600" height="847" alt="WhatsApp Image 2026-09-29 at 7 50 57 PM" src="https://github.com/user-attachments/assets/cba691ae-07ba-4948-9246-cce1cd9b377a" />
+<img width="1905" height="1015" alt="image" src="https://github.com/user-attachments/assets/f950ee05-3cb6-4b34-95d0-0d4230e45901" />
+
 
 
 
