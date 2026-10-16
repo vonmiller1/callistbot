@@ -13,7 +13,7 @@ import {
   Clock,
   Sparkles
 } from 'lucide-react';
-import { UserProfile } from '../types';
+import { UserProfile } from './types';
 
 interface ProfileModalProps {
   isOpen: boolean;
