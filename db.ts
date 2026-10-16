@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
-import { UserProfile, Meeting, AppNotification, CalendarIntegration } from '../types';
+import { UserProfile, Meeting, AppNotification, CalendarIntegration } from './types';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const DB_FILE = path.join(DATA_DIR, 'calist_store.json');
@@ -33,7 +33,12 @@ export function hashPassword(password: string): { salt: string; hash: string } {
 
 export function verifyPassword(password: string, salt: string, hash: string): boolean {
   const checkHash = crypto.pbkdf2Sync(password, salt, 1000, 64, 'sha512').toString('hex');
-  return checkHash === hash;
+  const expected = Buffer.from(hash, 'hex');
+  const actual = Buffer.from(checkHash, 'hex');
+  if (expected.length !== actual.length) {
+    return false;
+  }
+  return crypto.timingSafeEqual(expected, actual);
 }
 
 // Initial seed data so users can test immediately or create new accounts
@@ -422,6 +427,9 @@ class DatabaseService {
     const idx = this.data.meetings.findIndex((m) => m.id === id);
     if (idx === -1) return null;
     const existing = this.data.meetings[idx];
+    if (existing.organizerId !== userId) {
+      return null;
+    }
     const updated: Meeting = {
       ...existing,
       ...updates,
@@ -466,7 +474,11 @@ class DatabaseService {
     return true;
   }
 
-  public deleteMeeting(id: string): boolean {
+  public deleteMeeting(id: string, userId: string): boolean {
+    const meeting = this.data.meetings.find((m) => m.id === id);
+    if (!meeting || meeting.organizerId !== userId) {
+      return false;
+    }
     const initialLen = this.data.meetings.length;
     this.data.meetings = this.data.meetings.filter((m) => m.id !== id);
     this.save();
