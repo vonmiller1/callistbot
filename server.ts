@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url';
 import crypto from 'crypto';
 import JSZip from 'jszip';
 import { GoogleGenAI } from '@google/genai';
-import { db, hashPassword, verifyPassword } from './src/backend/db';
-import { Meeting, UserProfile } from './src/types';
+import { db, hashPassword, verifyPassword } from './db';
+import { Meeting, UserProfile } from './types';
 
 dotenv.config();
 
@@ -445,9 +445,9 @@ app.post('/api/meetings/:id/cancel', requireAuth, (req: AuthenticatedRequest, re
 
 // Delete Meeting
 app.delete('/api/meetings/:id', requireAuth, (req: AuthenticatedRequest, res) => {
-  const success = db.deleteMeeting(req.params.id);
+  const success = db.deleteMeeting(req.params.id, req.user!.id);
   if (!success) {
-    return res.status(404).json({ error: 'Meeting not found.' });
+    return res.status(404).json({ error: 'Meeting not found or you do not have permission to delete it.' });
   }
   return res.json({ success: true, message: 'Meeting removed.' });
 });
@@ -557,7 +557,7 @@ Provide a friendly, direct, concise, and helpful answer. Avoid technical jargon.
 // -------------------------------------------------------------
 // DOWNLOAD UPGRADED ZIP EXPORT
 // -------------------------------------------------------------
-app.get('/api/export-full-zip', async (req, res) => {
+app.get('/api/export-full-zip', requireAuth, async (req, res) => {
   try {
     const zip = new JSZip();
 
@@ -568,29 +568,30 @@ app.get('/api/export-full-zip', async (req, res) => {
       'index.html',
       'metadata.json',
       '.env.example',
+      'README.md',
       'server.ts',
-      'src/main.tsx',
-      'src/App.tsx',
-      'src/index.css',
-      'src/types.ts',
-      'src/backend/db.ts',
-      'src/services/api.ts',
-      'src/services/zipExporter.ts',
-      'src/data/mockWorkspace.ts',
-      'src/data/simpleRepoFiles.ts',
-      'src/components/Header.tsx',
-      'src/components/Navbar.tsx',
-      'src/components/AuthModal.tsx',
-      'src/components/Dashboard.tsx',
-      'src/components/ProfileModal.tsx',
-      'src/components/ScheduleMeetingModal.tsx',
-      'src/components/MeetingDetailsModal.tsx',
-      'src/components/MeetingPrepView.tsx',
-      'src/components/AssistantChatPane.tsx',
-      'src/components/ContactHabitsView.tsx',
-      'src/components/IntegrationsPortal.tsx',
-      'src/components/SettingsModal.tsx',
-      'src/components/NotificationsDropdown.tsx',
+      'main.tsx',
+      'App.tsx',
+      'index.css',
+      'types.ts',
+      'db.ts',
+      'api.ts',
+      'zipExporter.ts',
+      'mockWorkspace.ts',
+      'simpleRepoFiles.ts',
+      'Header.tsx',
+      'Navbar.tsx',
+      'AuthModal.tsx',
+      'Dashboard.tsx',
+      'ProfileModal.tsx',
+      'ScheduleMeetingModal.tsx',
+      'MeetingDetailsModal.tsx',
+      'MeetingPrepView.tsx',
+      'AssistantChatPane.tsx',
+      'ContactHabitsView.tsx',
+      'IntegrationsPortal.tsx',
+      'SettingsModal.tsx',
+      'NotificationsDropdown.tsx',
     ];
 
     const readmeContent = `# Calist - AI Meeting Prep & Workspace Intelligence
